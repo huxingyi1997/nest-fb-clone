@@ -22,6 +22,7 @@ specifiers:
   amqplib: ^0.10.3
   commitizen: ^4.3.0
   cz-conventional-changelog: ^3.3.0
+  dotenv: ^16.0.3
   eslint: ^8.0.1
   eslint-config-prettier: ^8.3.0
   eslint-plugin-prettier: ^4.0.0
@@ -73,6 +74,7 @@ devDependencies:
   '@typescript-eslint/parser': 5.59.5_jgkqkwom7vrxl4kyi454n2sy2i
   commitizen: 4.3.0
   cz-conventional-changelog: 3.3.0
+  dotenv: 16.0.3
   eslint: 8.40.0
   eslint-config-prettier: 8.8.0_eslint@8.40.0
   eslint-plugin-prettier: 4.2.1_mnhdxnhvwtt24ndv5d2pwtkrna
@@ -2791,7 +2793,6 @@ packages:
   /dotenv/16.0.3:
     resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
     engines: {node: '>=12'}
-    dev: false
 
   /eastasianwidth/0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
