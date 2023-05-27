@@ -5,7 +5,10 @@ import { Observable } from 'rxjs';
 
 @Controller()
 export class AppController {
-  constructor(@Inject('AUTH_SERVICE') private authService: ClientProxy) {}
+  constructor(
+    @Inject('AUTH_SERVICE') private authService: ClientProxy,
+    @Inject('PRESENCE_SERVICE') private readonly presenceService: ClientProxy,
+  ) {}
 
   @Get()
   async foo() {
@@ -27,6 +30,16 @@ export class AppController {
     return this.authService.send(
       {
         cmd: 'post-user',
+      },
+      {},
+    );
+  }
+
+  @Get('presence')
+  async getPresence() {
+    return this.presenceService.send(
+      {
+        cmd: 'get-presence',
       },
       {},
     );
