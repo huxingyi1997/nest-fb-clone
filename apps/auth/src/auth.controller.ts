@@ -1,4 +1,4 @@
-import { Controller, UseGuards } from '@nestjs/common';
+import { Controller, Inject, UseGuards } from '@nestjs/common';
 import {
   Ctx,
   MessagePattern,
@@ -6,16 +6,17 @@ import {
   RmqContext,
 } from '@nestjs/microservices';
 
-import { SharedService } from '@app/shared';
+import { ExistingUserDTO, NewUserDTO, SharedService } from '@app/shared';
 
 import { AuthService } from './auth.service';
-import { ExistingUserDTO, NewUserDTO } from './dtos/user.dto';
 import { JwtGuard } from './jwt.guard';
 
 @Controller()
 export class AuthController {
   constructor(
+    @Inject('AuthServiceInterface')
     private readonly authService: AuthService,
+    @Inject('SharedServiceInterface')
     private readonly sharedService: SharedService,
   ) {}
   @MessagePattern({ cmd: 'get-users' })

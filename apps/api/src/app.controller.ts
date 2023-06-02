@@ -3,8 +3,7 @@ import { ClientProxy } from '@nestjs/microservices';
 
 import { Observable } from 'rxjs';
 
-import { AuthGuard } from '@app/shared';
-import { ExistingUserDTO, NewUserDTO } from './dtos/app.dto';
+import { AuthGuard, ExistingUserDTO, NewUserDTO } from '@app/shared';
 
 @Controller()
 export class AppController {
